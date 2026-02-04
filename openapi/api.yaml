@@ -10,7 +10,6 @@ info:
   version: 0.1.1
 
 servers:
-  - url: https://lukau2411549.westeurope.cloudapp.azure.com
   - url: http://localhost:3000
 
 security:
