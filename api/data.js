@@ -1,9 +1,13 @@
 import { Router } from 'express';
-import {getAllData, getDataById, addData, updateData, deleteDataById} from '../db/db.js';
+import {getAllData, getDataById, addData, updateData, deleteDataById, getUsersRecords} from '../db/db.js';
 let router = Router()
 
 router.get('/', async (req, res) => {
     res.json( await getAllData() )
+})
+
+router.get('/user_records', async (req, res) => {
+    res.json( await getUsersRecords() )
 })
 
 router.get('/:id', async (req, res) => {

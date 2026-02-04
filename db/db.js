@@ -36,6 +36,12 @@ const addData = async ( {id, Firstname, Surname, userid} ) =>
     [id, Firstname, Surname, userid]
   )
 
+const getUsersRecords = async () => {
+  const res = await query('CALL user_records()')
+  console.log(res)
+  return res[0]
+}
+
 const updateData = async (id, {Firstname, Surname, userid}) =>
   execute(
     'UPDATE data SET Firstname = ?, Surname = ?, userid = ? WHERE id = ?',
@@ -55,7 +61,8 @@ export {
   findUser,
   getAllData,
   getDataById,
-  logonUsers
+  logonUsers,
+  getUsersRecords
 }
 
 /*
